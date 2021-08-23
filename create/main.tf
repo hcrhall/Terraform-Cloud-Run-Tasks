@@ -1,9 +1,9 @@
-variable "environment" {
-    default = "create"
+variable "meta" {
+    default = "foo"
 }
 
-resource "random_pet" "host" {}
+resource "random_pet" "name" {}
 
 output "host" {
-  value = "${random_pet.host.id}-${lower(var.environment)}"
+  value = "${random_pet.name.id}-${lower(var.meta)}"
 }

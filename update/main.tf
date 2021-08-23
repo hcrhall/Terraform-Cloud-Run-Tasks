@@ -1,13 +1,13 @@
-variable "environment" {
-    default = "update"
+variable "meta" {
+    default = "bar"
 }
 
-resource "random_pet" "host" {
+resource "random_pet" "name" {
     keepers = {
     timestamp = "${timestamp()}"
   }
 }
 
 output "host" {
-  value = "${random_pet.host.id}-${lower(var.environment)}"
+  value = "${random_pet.name.id}-${lower(var.meta)}"
 }
